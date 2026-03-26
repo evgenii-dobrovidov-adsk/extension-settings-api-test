@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Forma Building Functions + 2.5D Buildings
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains an Autodesk Forma Site Design embedded-view extension for:
 
-Currently, two official plugins are available:
+- managing project-level building functions through `Forma.settings`
+- creating persistent 2.5D floor-stack buildings through `Forma.elements.floorStack`
+- placing created buildings in the active proposal through `Forma.proposal`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Extension screenshot](./screenshot.png)
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Load the current project's building functions.
+- Add custom building functions with an optional color.
+- Update custom building function names and colors.
+- Delete custom building functions.
+- Create a 2.5D building, assign it a selected building function, and place it in the scene.
+- Render safely outside Forma in preview mode with host-only actions disabled.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- `forma-embedded-view-sdk`
+- Weave UI Kit via `@weave-mui/material` and `@weave-mui/styles`
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Local Development
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Install dependencies:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start the development server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Create a production build:
+
+```bash
+npm run build
+```
+
+Run lint checks:
+
+```bash
+npm run lint
+```
+
+## Using The Extension
+
+### In Autodesk Forma
+
+1. Open the extension inside Autodesk Forma.
+2. Review or manage building functions in the current project.
+3. Select a building function in the 2.5D building form.
+4. Enter the building dimensions and floor data.
+5. Click `Create and place building`, then click a point in the scene.
+
+### In Local Preview
+
+When opened outside Forma, the UI renders in preview mode. Host-only functionality such as settings mutations and scene placement stays disabled until the extension is opened from the Autodesk Forma embedded-view host.
