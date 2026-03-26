@@ -15,7 +15,7 @@
     "@mui/material": "^5.18.0",
     "@weave-mui/material": "^4.5.0",
     "@weave-mui/styles": "^4.5.0",
-    "forma-embedded-view-sdk": "file:../../ecosystem/forma-embedded-view-sdk",
+    "forma-embedded-view-sdk": "^0.92.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
