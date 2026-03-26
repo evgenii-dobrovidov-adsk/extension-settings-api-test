@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'ArtifaktElement';
+  src:
+    url('https://swc.autodesk.com/pharmacopeia/fonts/ArtifaktElement/v1.0/WOFF2/Artifakt%20Element%20Regular.woff2')
+      format('woff2');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'ArtifaktElement';
+  src:
+    url('https://swc.autodesk.com/pharmacopeia/fonts/ArtifaktElement/v1.0/WOFF2/Artifakt%20Element%20Bold.woff2')
+      format('woff2');
+  font-style: normal;
+  font-weight: 700;
+}

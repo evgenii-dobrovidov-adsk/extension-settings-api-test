@@ -1,0 +1,11 @@
+.app-shell {
+  margin: 0 auto;
+  max-width: 640px;
+  padding: 24px 16px 40px;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    padding: 16px 12px 32px;
+  }
+}
